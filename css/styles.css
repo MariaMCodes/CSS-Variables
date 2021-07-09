@@ -1,0 +1,65 @@
+      /* Using CSS variables */
+      
+       :root {
+          --font-size: 20px;
+          --gutter: 10px;
+      }
+      
+      .block1 {
+          font-size: var(--font-size);
+      }
+      /* As with normal variables, the --color value will be inherited by the divs. */
+      
+      div {
+          --primary-color: pink;
+      }
+      
+      div.block1 {
+          color: var(--primary-color);
+      }
+      
+      div.block2 {
+          color: var(--primary-color);
+      }
+      /* CSS variables can be made conditional with @media and other conditional rules */
+      /* The following code changes the value of the vriable, gutter on larger devices */
+      
+      @media screen and (min-width: 500px) {
+          --gutter: 30px
+      }
+      /* Project 1: Creating Component Variations using CSS Variables */
+      
+      .btn {
+          padding: 40px 60px;
+          border: 2px solid var(--color, black);
+          background: transparent;
+          font-size: 10px;
+          border-radius: 2px;
+      }
+      
+      .btn:hover {
+          cursor: pointer;
+          background: var(--color, black);
+          color: white;
+      }
+      /* Variations to this CSS variable */
+      
+      .btn.red {
+          --color: red;
+      }
+      
+      .btn.yellow {
+          --color: yellow;
+      }
+      
+      .btn.green {
+          --color: green;
+      }
+      
+      .btn.orange {
+          --color: orange;
+      }
+      
+      .btn.teal {
+          --color: teal;
+      }
